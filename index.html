@@ -42,7 +42,7 @@
 <body>
 
     <h1>this is totally Schoology</h1>
-    <p>Press <strong>Enter</strong> at any time to toggle the Schoology screen.</p>
+    <p>to show schoology, press the area OUTSIDE of the GD playing box then press space</p>
     
     <div id="game-container">
         <iframe id="game-frame" src="https://www.geometrydash.com/game/index.html" width="1080" height="480"></iframe>
@@ -58,7 +58,7 @@
         const gameFrame = document.getElementById("game-frame");
 
         window.addEventListener("keydown", (event) => {
-            if ((event.code !== "Enter" && event.code !== "NumpadEnter") || event.repeat) return;
+            if ((event.code !== "Space" && event.code !== "NumpadEnter") || event.repeat) return;
             
             event.preventDefault();
             
