@@ -20,6 +20,28 @@ GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP
                                            <div id="pooopoverlay" role="img" aria-label="pppoooooooop">
                                                    <img src="pooop.png" alt="this is totally schoology" />
                                                            </div>
+		    <style>
+      #pooopoverlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background: #000;
+      }
+
+      #pooopoverlay img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      #pooopoverlay[hidden] {
+        display: none;
+      }
+    </style>
                                                            <script>
 (() => {
 const overlay = document.getElementById("pooopoverlay");
