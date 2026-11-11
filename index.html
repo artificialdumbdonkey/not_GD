@@ -1,29 +1,29 @@
-<!--
-
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-    C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-    Code, Compile, Run and Debug online from anywhere in world.
-
-    -->
-
-    <html>
-    <body>
+<html>
+<head>
     <title>Home | Schoology</title>
-    <h1>welcome to GD ripoff</h1>
-	<text>To play, press your mouse in the GD play area, then press space to jump if you want. To show Schoology, press your mouse in any area not in the GD play area, then press space</text>
-	<link rel="icon" href="https://resources.finalsite.net/images/f_auto,q_auto/v1626100427/k12albemarleorg/uj41eppe27bunrvhwnep/PowerSchoolLogos_Vertical-01.png">
-    <iframe src="https://geometrydash.com " width="1080" height="480"></iframe>
-		
+    <link rel="shortcut icon" type="image/png" href="https://resources.finalsite.net/images/f_auto,q_auto/v1626100427/k12albemarleorg/uj41eppe27bunrvhwnep/PowerSchoolLogos_Vertical-01.png">
+    
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+      
+      #game-container {
+        position: relative;
+        width: 1080px;
+        height: 480px;
+        margin-top: 10px;
+      }
 
-                <canvas id="screen"></canvas>
-                           <div id="ui"></div>
-                                   <div id="transition-layer"></div>
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ccc;
+      }
 
-                                           <div id="pooopoverlay" role="img" aria-label="pppoooooooop">
-                                                   <img src="pooop.png" alt="this is totally schoology" />
-                                                           </div>
-		    <style>
       #pooopoverlay {
         position: fixed;
         inset: 0;
@@ -45,16 +45,42 @@ GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP
         display: none;
       }
     </style>
-                                                           <script>
-(() => {
-const overlay = document.getElementById("pooopoverlay");
-	window.addEventListener("keydown", (event) => {
-		if (event.code !== "Space" || event.repeat) return;
-		event.preventDefault();
-		overlay.hidden = !overlay.hidden;
-	});
-})();
-</script>
-</body>
+</head>
+<body>
 
+    <h1>Welcome to Schoology</h1>
+    <p>Press <strong>Enter</strong> at any time to toggle the Schoology screen (which hides the game).</p>
+    
+    <div id="game-container">
+        <iframe id="game-frame" src="https://geometrydash.com" width="1080" height="480"></iframe>
+    </div>
+
+    <div id="pooopoverlay" role="img" aria-label="Schoology Screen" hidden>
+        <img src="pooop.png" alt="Schoology" />
+    </div>
+
+    <script>
+    (() => {
+        const overlay = document.getElementById("pooopoverlay");
+        const gameFrame = document.getElementById("game-frame");
+
+        window.addEventListener("keydown", (event) => {
+            if ((event.code !== "Enter" && event.code !== "NumpadEnter") || event.repeat) return;
+            
+            event.preventDefault();
+            
+            overlay.hidden = !overlay.hidden;
+
+            if (!overlay.hidden) {
+                gameFrame.dataset.src = gameFrame.src;
+                gameFrame.src = "";
+            } else {
+                if (gameFrame.dataset.src) {
+                    gameFrame.src = gameFrame.dataset.src;
+                }
+            }
+        });
+    })();
+    </script>
+</body>
 </html>
